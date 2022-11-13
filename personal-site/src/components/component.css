@@ -7,10 +7,11 @@
 body {
     font-family: var(--font-title);
     color: var(--background-color) !important;
-    background-color: var(--background-color);
+    background-color: var(--background-color) !important;
 
     overflow: auto;
     height: 100%;
+    overflow-x: hidden;
 }
 
 :root {
@@ -40,6 +41,8 @@ body {
     --side-padding: 10vw;
     --button-sizing: 50px;
     --button-radius: 15px;
+
+    --splatter-size: 40vw;
 }
 /* #endregion */
 
@@ -118,16 +121,19 @@ body {
     
 }
 
+.hero {
+    height: 90vh;
+}
+
 .section {
     display: flex;
     justify-content: center;
 
-    height: 100vh;
     background-color: var(--background-color);
 
     color: var(--white-font-color);
     
-    padding: 0 var(--side-padding) 0 var(--side-padding);
+    padding: 0 var(--side-padding);
 }
 
 .hero-content {
@@ -136,9 +142,9 @@ body {
     justify-content: center;
     gap: 2em;
     --hero-content-padding: 2em;
-    padding: var(--hero-content-padding);
+    padding-right: var(--hero-content-padding);
 
-    width: calc(40vw - 2 * var(--hero-content-padding));
+    width: calc(50vw - var(--side-padding));
 }
 
 .text-content {
@@ -155,6 +161,7 @@ body {
     font-family: var(--font-title);
     font-size: var(--font-title-size);
     font-weight: var(--font-title-weight);
+    line-height: normal;
 
     color: white;
 
@@ -179,7 +186,7 @@ body {
 }
 
 .button {
-    background: white;
+    background: linear-gradient(var(--background-color),var(--background-color)) no-repeat, white;
 
     height: 60px;
     width: 60px;
@@ -189,10 +196,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: 0.3s ease;
+    background-size: 0% 100%;
+    background-position: center;
+}
+
+.button svg {
+    color: var(--background-color);
+    transition: 0.3s ease;
 }
 
 .hero-visual {
-    --memoji-size: 300px;
+    --memoji-size: 275px;
 
     display: flex;
     flex-direction: column;
@@ -202,15 +218,40 @@ body {
     width: 40vw;
 }
 
-.hero-visual img {
+.hero-visual .memoji {
     height: var(--memoji-size);
     width: var(--memoji-size);
+
+    position: absolute;
+    z-index: 2;
 }
+
+.splatter-container {
+    width: var(--splatter-size) !important;
+    height: var(--splatter-size);
+    margin: 1em auto;
+}
+
+.splatter-container img {
+    width: var(--splatter-size);
+    height: var(--splatter-size);
+    object-fit: cover;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.one {
+    -webkit-mask-image: url('../assets/splatters/splash.png');
+    mask-image: url('../assets/splatters/splash.png');  
+}
+
+
 /* #endregion */
 
 /* #region About */
 .about {
     flex-direction: column;
+    margin-bottom: 10em;
 }
 
 .about .description {
@@ -238,11 +279,11 @@ body {
 }
 
 .section-title-text:nth-child(1) {
-    background-image: url('../assets/splatters/about.jpg');
+    background-image: url('../assets/splatters/about.jpeg');
 }
 
 .section-title-text:nth-child(2) {
-    background-image: url('../assets/splatters/work.jpg');
+    background-image: url('../assets/splatters/work.jpeg');
 }
 
 .about .about-content {
@@ -273,24 +314,42 @@ body {
 
 .about canvas {
     height: 300px !important;
+    
+}
+.canvas-container {
+    width: auto;
+    position: relative;
+    z-index: 100;
+    display: block;
+}
+
+.two {
+    -webkit-mask-image: url('../assets/splatters/hex-splash.png');
+    mask-image: url('../assets/splatters/hex-splash.png');  
+}
+
+.about .splatter-container {
+    --splatter-size-2: clamp(450px, calc(var(--splatter-size) / 1.25), 500px);
+    position: absolute;
+    z-index: 0;
+
+    width: var(--splatter-size-2) !important;
+    height: var(--splatter-size-2);
+}
+.about .splatter-container img {
+    width: var(--splatter-size-2) !important;
+    height: var(--splatter-size-2);
+}
+.skill-graphics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
 }
 
 /* #endregion */
 
 /* #region Work */
-/* .section-title img {
-    height: 75px;
-    width: auto;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-}
-
-.work .work-mask {
-    -webkit-mask-image: url('../assets/icons/work.png');
-    mask-image: url('../assets/icons/work.png');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-} */
 
 .section.work {
     flex-direction: column;
@@ -414,21 +473,41 @@ body {
 /* #endregion */
 
 /* #region Media Splits */
+@media screen and (max-width: 1349px) {
+    .hero-visual {
+        --memoji-size: 250px;
+    }
+}
+@media screen and (max-width: 1199px) {
+    :root {
+        --font-body-size: 1.25rem;
+    }
+}
 @media screen and (max-width: 999px) {
+    :root {
+        --font-section-title-size: 4rem;
+    }
     .section {
         flex-direction: column;
         height: 100%;
+        margin-bottom: 4em;
     }
     .hero-visual {
-        --memoji-size: 250px;
+        --memoji-size: 40vw;
         width: calc(100vw - 2 * var(--side-padding));
-        height: calc(var(--memoji-size) + 5em);
-        justify-content: flex-end;
-        margin-bottom: 3em;
     }
     .hero-content {
         justify-content: center;
-        width: calc(100vw - 2 * var(--side-padding) - 2 * var(--hero-content-padding));
+        padding-right: 0px;
+        width: calc(100vw - 2 * var(--side-padding));
+    }
+    .hero-container {
+        margin-bottom: 4em;
+        
+    }
+    .about .description {
+        text-align: center;
+        padding-right: 0px;
     }
     .text-content {
         text-align: center;
@@ -472,6 +551,16 @@ body {
         justify-content: center;
         align-items: center;
     }
+    :root {
+        --splatter-size: 80vw;
+    }
+    .about .skill-container {
+        width: 80vw;
+    }
+    .footer {
+        padding-top: 2em;
+    }
+
 }
 @media screen and (max-width: 749px) {
     .name {
@@ -480,22 +569,28 @@ body {
     .container-fluid {
         justify-content: center !important;
     }
-    /* .project .card-img {
-        -webkit-filter: none;
-        filter: none;
-    } */
 }
 @media screen and (max-width: 499px) {
     .name {
         font-size: 3.5rem;
     }
-    .hero-visual {
-        --memoji-size: 200px;
-    }
     .hero-content {
         padding: 0px;
         width: calc(100vw - 2 * var(--side-padding));
         gap: 1em;
+    }
+    .button svg {
+        height: 40px !important;
+        width: 40px !important;
+    }
+    .button {
+        height: 50px;
+        width: 50px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .navbar {
+        height: 10vh;
     }
 }
 /* #endregion */
@@ -504,5 +599,11 @@ body {
     .resume-button:hover {
         background-size: 100% 100%;
         color: var(--background-color);
+    }
+    .button:hover {
+        background-size: 100% 100%;
+    }
+    .button:hover svg {
+        color: white !important;
     }
 }

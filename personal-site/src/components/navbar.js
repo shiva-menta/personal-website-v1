@@ -6,12 +6,14 @@ import Nav from 'react-bootstrap/Nav'
 import { FaBars } from 'react-icons/fa'
 import siteLogo from '../assets/site-logo.png'
 import { Link } from "react-scroll";
+import { motion, Variants } from "framer-motion";
 
 function NavBar() {
+    // Media Query
     const isLargerThanSplit = useMediaQuery({ query: '(min-width: 750px)'});
 
     return (
-        <Navbar bg="" className="navbar">  
+        <Navbar bg="">  
             <Container fluid>
                 <Link smooth spy to ="hero">
                     <Navbar.Brand><img src={siteLogo} alt='' height="50vh"/></Navbar.Brand>
