@@ -9,7 +9,7 @@ function Hero() {
     const isLargerThanSplit = useMediaQuery({ query: '(min-width: 1000px)'});
 
     return (
-        <div className="hero-container">
+        <div className="hero-container" id="hero">
             {isLargerThanSplit && 
                 <div className='section hero'>
                     <div className='hero-content'>
