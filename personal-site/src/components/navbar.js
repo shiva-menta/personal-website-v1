@@ -3,10 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { useMediaQuery } from 'react-responsive';
 import Nav from 'react-bootstrap/Nav'
-import { FaBars } from 'react-icons/fa'
 import siteLogo from '../assets/site-logo.png'
 import { Link } from "react-scroll";
-import { motion, Variants } from "framer-motion";
 
 function NavBar() {
     // Media Query

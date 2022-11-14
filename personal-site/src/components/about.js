@@ -8,10 +8,13 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 import bwSplatter from '../assets/splatters/bw.png'
+import { useMediaQuery } from 'react-responsive';
 
 
 // Main Functional Component
 function About() {
+    const isLargerThanSplit = useMediaQuery({ query: '(min-width: 500px)'});
+
     const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R']
     const tech = tech_stack.map((tag) => 
         <Badge pill key={tag+"about"} style={{backgroundColor: 'white', color: 'black'}} bg="">
@@ -36,7 +39,7 @@ function About() {
           mesh.current.rotation.x = mesh.current.rotation.z += 0.01
         })
         return (
-          <mesh ref={mesh} scale={3}>
+          <mesh ref={mesh} scale={isLargerThanSplit ? 3 : 2.5}>
             <boxGeometry attach="geometry"/>
             {textures.map((texture, idx) =>
                 <meshStandardMaterial key={texture.id} attach={`material-${idx}`} map={texture} />

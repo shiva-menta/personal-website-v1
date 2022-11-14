@@ -14,6 +14,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 :root {
     --background-color: #121212;
     --background-gray: rgba(128, 128, 128, 0.5);
@@ -194,6 +198,7 @@ body {
     border-radius: 50%;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -205,6 +210,8 @@ body {
 .button svg {
     color: var(--background-color);
     transition: 0.3s ease;
+    padding: auto;
+    margin: auto;
 }
 
 .hero-visual {
@@ -314,7 +321,7 @@ body {
 
 .about canvas {
     height: 300px !important;
-    
+    width: 40vw !important
 }
 .canvas-container {
     width: auto;
@@ -329,7 +336,7 @@ body {
 }
 
 .about .splatter-container {
-    --splatter-size-2: clamp(450px, calc(var(--splatter-size) / 1.25), 500px);
+    --splatter-size-2: clamp(325px, calc(var(--splatter-size) / 1.5), 375px);
     position: absolute;
     z-index: 0;
 
@@ -376,14 +383,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 50%;
 }
 
 .project .card-img {
     border-radius: 1.5rem;
-    width: calc((100vw - 2 * var(--side-padding) - 2 * var(--card-padding))/ 2);
+    width: 100%;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: 0.3s ease;
+}
+.project .project-image-container {
+    width: 50%;
 }
 
 .project:hover .card-img {
@@ -445,7 +456,7 @@ body {
 
 /* #region Footer */
 .footer {
-    padding-top: 5em;
+    margin-top: 5em;
     background-color: var(--background-color);
 
     display: flex;
@@ -490,16 +501,17 @@ body {
     .section {
         flex-direction: column;
         height: 100%;
+        width: 100%;
         margin-bottom: 4em;
     }
     .hero-visual {
         --memoji-size: 40vw;
-        width: calc(100vw - 2 * var(--side-padding));
+        width: 100%;
     }
     .hero-content {
         justify-content: center;
         padding-right: 0px;
-        width: calc(100vw - 2 * var(--side-padding));
+        width: 100%;
     }
     .hero-container {
         margin-bottom: 4em;
@@ -545,7 +557,7 @@ body {
         margin-bottom: 1em;
     }
     .about .description {
-        width: auto;
+        width: 100%;
     }
     .hero {
         justify-content: center;
@@ -558,7 +570,19 @@ body {
         width: 80vw;
     }
     .footer {
-        padding-top: 2em;
+        margin-top: 2em;
+    }
+    .about canvas {
+        width: 100% !important;
+    }
+    .project .project-content {
+        width: 100%;
+    }
+    .project .project-image-container {
+        width: 100%;
+    }
+    .about .splatter-container {
+        overflow: hidden;
     }
 
 }
@@ -576,7 +600,7 @@ body {
     }
     .hero-content {
         padding: 0px;
-        width: calc(100vw - 2 * var(--side-padding));
+        width: 100%;
         gap: 1em;
     }
     .button svg {
@@ -584,8 +608,14 @@ body {
         width: 40px !important;
     }
     .button {
-        height: 50px;
-        width: 50px;
+        height: 46px;
+        width: 46px;
+    }
+    .about .splatter-container {
+        --splatter-size-2: 275px;
+    }
+    .skill-graphics {
+        height: 35vh;
     }
 }
 @media screen and (min-width: 1000px) {
