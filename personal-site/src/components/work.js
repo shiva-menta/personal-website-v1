@@ -1,12 +1,11 @@
-import './component.css'
-import { MdComputer } from 'react-icons/md'
-import Projects from '../assets/jsons/projects.json'
 import Project from './project'
+import Projects from '../assets/jsons/projects.json'
+import { MdComputer } from 'react-icons/md'
 
 // Main Functional Component
 function Work() {
+    // Project Building
     const ProjectDivs = [];
-
     for (var key in Projects) {
         ProjectDivs.push(<Project name={key} key={key} data={Projects[key]}></Project>)
     }

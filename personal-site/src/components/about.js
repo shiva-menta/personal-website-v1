@@ -1,20 +1,22 @@
-import './component.css'
-import { BsFillPersonFill } from 'react-icons/bs'
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useState, useRef, Suspense } from 'react';
-import { Canvas, useFrame, useLoader} from '@react-three/fiber'
+import { useRef, Suspense } from 'react';
+import { motion } from "framer-motion";
+import { useMediaQuery } from 'react-responsive';
+import { Canvas, useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
-import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
+
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import bwSplatter from '../assets/splatters/bw.png'
-import { useMediaQuery } from 'react-responsive';
 
+import { BsFillPersonFill } from 'react-icons/bs'
+
+import bwSplatter from '../assets/splatters/bw.png'
 
 // Main Functional Component
 function About() {
+    // Media Query
     const isLargerThanSplit = useMediaQuery({ query: '(min-width: 500px)'});
 
+    // Building Skill Pills
     const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R']
     const tech = tech_stack.map((tag) => 
         <Badge pill key={tag+"about"} style={{backgroundColor: 'white', color: 'black'}} bg="">
@@ -22,9 +24,8 @@ function About() {
         </Badge>
     );
 
-    // Functions
+    // ThreeJS Scene Preparation
     function Box() {
-
         const textures = useTexture([
             'textures/1.png',
             'textures/2.png',
@@ -47,8 +48,6 @@ function About() {
           </mesh>
         )
       }
-    
-    // Executed Code
 
     // Render Function
     return (
@@ -67,7 +66,7 @@ function About() {
                 <div className="skill-container">
                     <div className='skill-graphics'>
                             <motion.div className="splatter-container" id="splatter-2">
-                                <img className="two" src={bwSplatter}/>
+                                <img className="splatter-mask-2" src={bwSplatter} alt={"Black / white splatter paint."}/>
                             </motion.div>
                             <div className="canvas-container">
                                 <Canvas>

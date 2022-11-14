@@ -1,21 +1,22 @@
-import './component.css'
+import { Link } from "react-scroll";
+import { useMediaQuery } from 'react-responsive';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { useMediaQuery } from 'react-responsive';
 import Nav from 'react-bootstrap/Nav'
+
 import siteLogo from '../assets/site-logo.png'
-import { Link } from "react-scroll";
 
 function NavBar() {
     // Media Query
     const isLargerThanSplit = useMediaQuery({ query: '(min-width: 750px)'});
 
+    // Render Function
     return (
         <Navbar bg="">  
             <Container fluid>
-                <Link smooth spy to ="hero">
-                    <Navbar.Brand><img src={siteLogo} alt='' height="50vh"/></Navbar.Brand>
-                </Link>
+                <Navbar.Brand>
+                    <img src={siteLogo} alt='' height="50vh"/>
+                </Navbar.Brand>
                 {isLargerThanSplit &&
                     <Nav className="navbar-links-and-buttons" style={{ maxHeight: '300px' }} navbarScroll>
                         <Link className="scroll-link" smooth spy to ="about">About</Link>
@@ -25,7 +26,6 @@ function NavBar() {
                 }
             </Container>
         </Navbar>
-        
     )
 }
 

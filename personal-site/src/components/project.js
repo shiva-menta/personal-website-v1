@@ -1,21 +1,20 @@
-import './component.css'
 import Card from 'react-bootstrap/Card'
-import { TbWorld } from 'react-icons/tb';
-import {FaGithub} from 'react-icons/fa'
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import { useMediaQuery } from 'react-responsive';
 
+import { TbWorld } from 'react-icons/tb';
+import {FaGithub} from 'react-icons/fa'
 
 // Main Functional Component
 function Project(props) {
+    // Props Data
     const data = props.data;
     const full_name = props.name;
     const name = data.name;
     const description = data.description;
     const tech_stack = data.tech;
-    const isWebsite = data.link != "";
-    const isGithub = data.github != "";
+    const isWebsite = data.link !== "";
+    const isGithub = data.github !== "";
     const link = data.link;
     const github = data.github;
     var tech = [];
