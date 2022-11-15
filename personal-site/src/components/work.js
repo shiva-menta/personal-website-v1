@@ -14,7 +14,7 @@ function Work() {
     return (
         <div className='section work' id="work">
             <div className='section-title'>
-                <MdComputer size={75} color={'white'}/>
+                <MdComputer className="section-title-icon"/>
                 <div className='section-title-text'>Work</div>
             </div>
             <div className='work-projects-container'>{ProjectDivs}</div>

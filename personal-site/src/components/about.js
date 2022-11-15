@@ -40,7 +40,7 @@ function About() {
           mesh.current.rotation.x = mesh.current.rotation.z += 0.01
         })
         return (
-          <mesh ref={mesh} scale={isLargerThanSplit ? 3 : 2.5}>
+          <mesh ref={mesh} scale={isLargerThanSplit ? 3 : 2.25}>
             <boxGeometry attach="geometry"/>
             {textures.map((texture, idx) =>
                 <meshStandardMaterial key={texture.id} attach={`material-${idx}`} map={texture} />
@@ -54,7 +54,7 @@ function About() {
         <div className='section about' id="about">
             <div className='section-title'>
                 <div className='section-title-text'>About</div>
-                <BsFillPersonFill size={75} color={'white'}/>
+                <BsFillPersonFill className="section-title-icon"/>
             </div>
             <div className='about-content'>
                 <div className='description'>

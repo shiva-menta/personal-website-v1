@@ -81,6 +81,11 @@ html {
 .section-title-text:nth-child(2) {
     background-image: url('../assets/splatters/work.jpeg');
 }
+.section-title-icon {
+    height: 75px;
+    width: 75px;
+    color: white;
+}
 .badge {
     font-family: var(--font-mono);
     font-size: var(--font-mono-size) / 2;
@@ -171,7 +176,7 @@ html {
 /* #region Hero */
 /* General */
 .hero {
-    height: 90vh;
+    height: max(90vh, 800px);
 }
 
 /* Word Content */
@@ -292,6 +297,7 @@ html {
 .about .description {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
 
     width: 40vw;
     padding-right: 1em;
@@ -301,6 +307,9 @@ html {
 
 /* Visual Content */
 .about .skill-container {
+    display: flex;
+    flex-direction: column;
+
     width: 40vw;
 }
 .skill-graphics {
@@ -308,7 +317,7 @@ html {
     justify-content: center;
     align-items: center;
     
-    height: 40vh;
+    height: min(40vh, 400px);
 }
 .canvas-container {
     display: block;
@@ -404,6 +413,11 @@ html {
     font-weight: var(--font-title-weight);
     text-align: left;
     color: var(--white-color);
+
+    /* background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url("../assets/splatters/bw.png"); */
 }
 .project .card-subtitle {
     font-family: var(--font-body);
@@ -582,12 +596,17 @@ html {
 @media screen and (max-width: 499px) {
     /* Root */
     :root {
-        --splatter-size-2: 275px;
+        --splatter-size-2: 240px;
+        --font-section-title-size: 3.25rem;
+    }
+    .section-title-icon {
+        height: 60px;
+        width: 60px;
     }
 
     /* Hero */
     .name {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
     .hero-content {
         padding: 0px;
@@ -605,13 +624,32 @@ html {
 
     /* About */
     .skill-graphics {
-        height: 35vh;
+        height: max(35vh, 275px);
+    }
+    .description {
+        font-size: calc(var(--font-body-size) / 1.25);
+    }
+
+    /* Work */
+    .project .card-title {
+        font-size: calc(var(--font-title-size) / 2.75);
+    }
+    .project .card-subtitle {
+        font-size: calc(var(--font-body-size) / 1.25);
+    }
+
+    /* Footer */
+    .footer-text {
+        font-size: 0.75rem;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .navbar {
-        height: 10vh;
+        height: max(10vh, 75px);
+    }
+    .about .skill-container {
+        gap: 2em;
     }
 }
 /* #endregion */
