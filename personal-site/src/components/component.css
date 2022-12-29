@@ -16,6 +16,7 @@ body {
 }
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 :root {
     --background-color: #121212;
@@ -104,6 +105,10 @@ html {
     font-weight: var(--font-mono-weight);
     font-size: var(--font-mono-header);
 }
+#nav-anim {
+    width: 100%;
+    display: flex;
+}
 .navbar button {
     padding: 0.5em 1em;
     
@@ -176,7 +181,7 @@ html {
 /* #region Hero */
 /* General */
 .hero {
-    height: max(90vh, 800px);
+    height: max(90vh, 750px);
 }
 
 /* Word Content */
@@ -537,6 +542,9 @@ html {
     .about .skill-container {
         width: 80vw;
     }
+    .about .skill-graphics {
+        height: max(40vh, 400px);
+    }
     .about .splatter-container {
         overflow: hidden;
     }
@@ -587,6 +595,9 @@ html {
     .container-fluid {
         justify-content: center !important;
     }
+    #nav-anim {
+        justify-content: center !important;
+    }
     /* Hero */
     .name {
         font-size: 4rem;
@@ -623,7 +634,7 @@ html {
     }
 
     /* About */
-    .skill-graphics {
+    .about .skill-graphics {
         height: max(35vh, 275px);
     }
     .description {

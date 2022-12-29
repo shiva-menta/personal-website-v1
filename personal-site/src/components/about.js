@@ -16,6 +16,23 @@ function About() {
     // Media Query
     const isLargerThanSplit = useMediaQuery({ query: '(min-width: 500px)'});
 
+    // Motion Variants
+    const titleVariants = {
+        offscreen: {y: 50, opacity: 0},
+        onscreen: {y: 0, opacity: 1, transition: {
+            type: "ease",
+            duration: 0.5
+        }}
+    }
+    const animationVariants = {
+        offscreen: {y: 50, opacity: 0},
+        onscreen: (i) => {return {y: 0, opacity: 1, transition: {
+            type: "ease",
+            duration: 0.5,
+            delay: i * 0.25
+        }}}
+    }
+
     // Building Skill Pills
     const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R']
     const tech = tech_stack.map((tag) => 
@@ -47,23 +64,38 @@ function About() {
             )}
           </mesh>
         )
-      }
+    }
+
+    // Functions
+    let textCounter = -1
+    function textIncrement() {
+        textCounter += 1;
+        return textCounter;
+    }
 
     // Render Function
     return (
-        <div className='section about' id="about">
-            <div className='section-title'>
+        <motion.div className='section about' id="about">
+            <motion.div className='section-title' variants={titleVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.25 }}>
                 <div className='section-title-text'>About</div>
                 <BsFillPersonFill className="section-title-icon"/>
-            </div>
-            <div className='about-content'>
+            </motion.div>
+            <motion.div className='about-content' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1 }}>
                 <div className='description'>
-                    <p className='line-one'>Hi! My name is Shiva and I’m a student at UPenn studying Business and Computer Science. Also doing some DJ'ing on the side!</p>
-                    <p className='line-two'>I started programming with Arduinos back in middle school, but now I’m more into developing software to make cool things better.</p>
-                    <p className='line-three'>I currently work part-time with Cypher Accelerator as a co-Tech Lead. On the side, I’m working on developing a playlist builder for DJs.</p>
-                    <p className='line-four'>To the right, find some of the languages / frameworks that I’m most comfortable working with.</p>
+                    <motion.div variants={animationVariants} custom={textIncrement()}>
+                        <p className='line-one'>Hi! My name is Shiva and I’m a student at UPenn studying Business and Computer Science. Also doing some DJ'ing on the side!</p>
+                    </motion.div>
+                    <motion.div variants={animationVariants} custom={textIncrement()}>
+                        <p className='line-two'>I started programming with Arduinos back in middle school, but now I’m more into developing software to make cool things better.</p>
+                    </motion.div>
+                    <motion.div variants={animationVariants} custom={textIncrement()}>
+                        <p className='line-three'>I currently work part-time with Cypher Accelerator as a co-Tech Lead. On the side, I’m working on developing a playlist builder for DJs.</p>
+                    </motion.div>
+                    <motion.div variants={animationVariants} custom={textIncrement()}>
+                        <p className='line-four'>To the right, find some of the languages / frameworks that I’m most comfortable working with.</p>
+                    </motion.div>
                 </div>
-                <div className="skill-container">
+                <motion.div className="skill-container" variants={animationVariants} custom={textIncrement()}>
                     <div className='skill-graphics'>
                             <motion.div className="splatter-container" id="splatter-2">
                                 <img className="splatter-mask-2" src={bwSplatter} alt={"Black / white splatter paint."}/>
@@ -81,9 +113,9 @@ function About() {
                         
                     </div>
                     <Stack direction="horizontal">{tech}</Stack>
-                </div>
-            </div>
-        </div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 }
 
