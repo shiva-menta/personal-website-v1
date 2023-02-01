@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { motion } from "framer-motion"
 
 import {FaGithub} from 'react-icons/fa'
+import {SiYoutubemusic} from 'react-icons/si'
 import {ImMail4} from 'react-icons/im'
 
 import Memoji from '../assets/shiv.png'
@@ -111,6 +112,11 @@ function Hero() {
                                     <ImMail4 size={50} color={'#121212'}/>
                                 </div>
                             </a>
+                            <a href="https://www.youtube.com/@shivamenta1138" target="_blank" rel="noopener noreferrer">
+                                <div className='button'>
+                                    <SiYoutubemusic size={50} color={'#121212'}/>
+                                </div>
+                            </a>
                         </motion.div>
                     </div>
                     <motion.div className='hero-visual' custom={animIncrement() + 2} variants={profileVariant}>
@@ -146,6 +152,11 @@ function Hero() {
                             <a href="mailto:shiva.123.menta@gmail.com" target="_blank" rel="noopener noreferrer">
                                 <div className='button'>
                                     <ImMail4 size={50} color={'#121212'}/>
+                                </div>
+                            </a>
+                            <a href="https://www.youtube.com/@shivamenta1138" target="_blank" rel="noopener noreferrer">
+                                <div className='button'>
+                                    <SiYoutubemusic size={50} color={'#121212'}/>
                                 </div>
                             </a>
                         </motion.div>

@@ -32,7 +32,7 @@ function NavBar() {
                         <Nav className="navbar-links-and-buttons" style={{ maxHeight: '300px'}} navbarScroll>
                             <Nav.Link className="scroll-link" smooth spy href="#about">About</Nav.Link>
                             <Nav.Link className="scroll-link" smooth spy href="#work">Work</Nav.Link>
-                            <a href='https://drive.google.com/file/d/1B4v9hOb0UZo15IGER6z8LA0FLZi_C3LU/view?usp=sharing' target="_blank" rel="noopener noreferrer"><button className="resume-button">Résumé</button></a>
+                            <a href='https://drive.google.com/file/d/1AOSNfzYUZC_Gd_LVN-FZcIbQ4ba9rLRv/view?usp=share_link' target="_blank" rel="noopener noreferrer"><button className="resume-button">Résumé</button></a>
                         </Nav>
                     }
                 </motion.div>
