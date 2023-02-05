@@ -89,7 +89,7 @@ function About() {
                         <p className='line-two'>I started programming with Arduinos back in middle school, but now I’m more into developing software to make cool things better.</p>
                     </motion.div>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
-                        <p className='line-three'>I currently work part-time with Cypher Accelerator as a co-Tech Lead. On the side, I’m working on developing a playlist builder for DJs.</p>
+                        <p className='line-three'>I currently work part-time with Cypher Accelerator as a co-Tech Lead. I'm also a backend developer at <a href='https://pennlabs.org/' target="_blank" rel="noopener noreferrer" style={{color: "white"}}>Penn Labs</a>. On the side, I’m working on developing a playlist builder for DJs.</p>
                     </motion.div>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
                         <p className='line-four'>To the right, find some of the languages / frameworks that I’m most comfortable working with.</p>
