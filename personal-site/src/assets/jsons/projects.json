@@ -4,13 +4,23 @@
         "description" : "A website for Wharton’s premier blockchain and crypto startup accelerator.",
         "tech" : [ "React", "Javascript", "Firebase"],
         "link" : "https://cypher.wharton.upenn.edu",
-        "github" : ""
+        "github" : "",
+        "youtube": ""
     },
     "Wordle Bot" : {
         "name" : "wordle_bot",
         "description" : "A bot that solves daily Wordle puzzles using information theory and displays performance over time.",
         "tech" : [ "Python", "React", "Firebase", "Heroku"],
         "link" : "https://shiva-menta.github.io/wordle-solver-bot/",
-        "github" : "https://github.com/shiva-menta/wordle-bot"
+        "github" : "https://github.com/shiva-menta/wordle-bot",
+        "youtube" : ""
+    },
+    "Myx" : {
+        "name" : "myx",
+        "description" : "A suite of tools for DJs. Current MVP matches acapellas with instrumentals for better mashups.",
+        "tech" : [ "Python", "Flask", "React"],
+        "link" : "",
+        "github" : "https://github.com/shiva-menta/myx",
+        "youtube" : "https://youtu.be/Crg0erhZ54k"
     }
 }

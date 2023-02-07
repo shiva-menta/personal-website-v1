@@ -3,7 +3,7 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 
 import { TbWorld } from 'react-icons/tb';
-import {FaGithub} from 'react-icons/fa'
+import {FaGithub, FaYoutubeSquare} from 'react-icons/fa'
 
 // Main Functional Component
 function Project(props) {
@@ -15,6 +15,8 @@ function Project(props) {
     const tech_stack = data.tech;
     const isWebsite = data.link !== "";
     const isGithub = data.github !== "";
+    const isYoutube = data.youtube !== "";
+    const youtube = data.youtube;
     const link = data.link;
     const github = data.github;
     var tech = [];
@@ -46,6 +48,9 @@ function Project(props) {
                                 </a>}
                                 {isGithub && <a href={github} target="_blank" rel="noopener noreferrer">
                                     <FaGithub size={30} color={"white"}/>
+                                </a>}
+                                {isYoutube && <a href={youtube} target="_blank" rel="noopener noreferrer">
+                                    <FaYoutubeSquare size={30} color={"white"}/>
                                 </a>}
                             </div>
                         </div>
