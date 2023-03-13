@@ -34,7 +34,7 @@ function About() {
     }
 
     // Building Skill Pills
-    const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R', 'SQL', 'Heroku', 'Flask']
+    const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R', 'SQL', 'Heroku', 'Flask', 'Docker']
     const tech = tech_stack.map((tag) => 
         <Badge pill key={tag+"about"} style={{backgroundColor: 'white', color: 'black'}} bg="">
             {tag}
