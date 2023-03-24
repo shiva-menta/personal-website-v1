@@ -19,7 +19,7 @@
         "name" : "myx",
         "description" : "A suite of tools for DJs. Current MVP matches acapellas with instrumentals for better mashups.",
         "tech" : [ "Python", "Flask", "React"],
-        "link" : "",
+        "link" : "https://myxdj.live/",
         "github" : "https://github.com/shiva-menta/myx",
         "youtube" : "https://youtu.be/Crg0erhZ54k"
     }
