@@ -1,4 +1,20 @@
 {
+    "Milestone Monitor" : {
+        "name" : "milestone_monitor",
+        "description" : "A GPT-powered SMS chatbot aimed at helping you follow through with your goals.",
+        "tech" : ["Python", "Django", "Celery", "Redis", "LangChain", "OpenAI", "Pinecone"],
+        "github" : "https://github.com/shiva-menta/milestone-monitor",
+        "link" : "",
+        "youtube": ""
+    },
+    "Myx" : {
+        "name" : "myx",
+        "description" : "A suite of tools for DJs. Current MVP matches acapellas with instrumentals for better mashups.",
+        "tech" : [ "Python", "Flask", "React"],
+        "link" : "https://myxdj.live/",
+        "github" : "https://github.com/shiva-menta/myx",
+        "youtube" : "https://youtu.be/Crg0erhZ54k"
+    },
     "Cypher Accelerator Website" : {
         "name" : "cypher",
         "description" : "A website for Wharton’s premier blockchain and crypto startup accelerator.",
@@ -14,13 +30,5 @@
         "link" : "https://shiva-menta.github.io/wordle-solver-bot/",
         "github" : "https://github.com/shiva-menta/wordle-bot",
         "youtube" : ""
-    },
-    "Myx" : {
-        "name" : "myx",
-        "description" : "A suite of tools for DJs. Current MVP matches acapellas with instrumentals for better mashups.",
-        "tech" : [ "Python", "Flask", "React"],
-        "link" : "https://myxdj.live/",
-        "github" : "https://github.com/shiva-menta/myx",
-        "youtube" : "https://youtu.be/Crg0erhZ54k"
     }
 }
