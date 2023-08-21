@@ -34,7 +34,7 @@ function About() {
     }
 
     // Building Skill Pills
-    const tech_stack = ['Python', 'Java', 'Javascript', 'React', 'HTML', 'CSS', 'R', 'SQL', 'Heroku', 'Flask', 'Docker']
+    const tech_stack = ['Python', 'JavaScript', 'Java', 'C++', 'HTML', 'CSS', 'Django', 'Flask', 'React', 'Docker', 'Kubernetes', 'SQL', 'Redis'];
     const tech = tech_stack.map((tag) => 
         <Badge pill key={tag+"about"} style={{backgroundColor: 'white', color: 'black'}} bg="">
             {tag}
@@ -83,16 +83,16 @@ function About() {
             <motion.div className='about-content' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1 }}>
                 <div className='description'>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
-                        <p className='line-one'>Hi! My name is Shiva and I’m a student at UPenn studying Business and Computer Science. Also doing some DJ'ing on the side!</p>
+                        <p className='line-one'>Hi! My name is Shiva and I’m studying Econ (Bachelors) and CS (Masters) @ Penn. Also doing some DJ'ing on the side!</p>
                     </motion.div>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
-                        <p className='line-two'>I started programming with Arduinos back in middle school, but now I’m more into developing software to make cool things better.</p>
+                        <p className='line-two'>I started programming with Arduinos back in middle school, but now I’m more focused on backend and full-stack engineering. I'm hoping to learn more about operating and networking over the next year.</p>
                     </motion.div>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
-                        <p className='line-three'>I currently work part-time with Cypher Accelerator as a co-Tech Lead. I'm also a backend developer at <a href='https://pennlabs.org/' target="_blank" rel="noopener noreferrer" style={{color: "white"}}>Penn Labs</a>. On the side, I’m working on developing a playlist builder for DJs.</p>
+                        <p className='line-three'>I currently work part-time with Cypher Accelerator as the lead of Software Development. I'm also a backend developer at <a href='https://pennlabs.org/' target="_blank" rel="noopener noreferrer" style={{color: "white"}}>Penn Labs</a>. On the side, I’m working on developing a playlist builder for DJs.</p>
                     </motion.div>
                     <motion.div variants={animationVariants} custom={textIncrement()}>
-                        <p className='line-four'>To the right, find some of the languages / frameworks that I’m most comfortable working with.</p>
+                        <p className='line-four'>To the right, find some of my favorite languages / frameworks / databases to work with.</p>
                     </motion.div>
                 </div>
                 <motion.div className="skill-container" variants={animationVariants} custom={textIncrement()}>
