@@ -429,6 +429,7 @@ html {
     font-size: var(--font-body-size);
     font-weight: var(--font-body-weight);
     text-align: left;
+    color: var(--white-color);
 }
 
 .project .project-features {
