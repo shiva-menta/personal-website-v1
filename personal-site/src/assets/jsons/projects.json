@@ -1,4 +1,12 @@
 {
+    "Myx" : {
+        "name" : "myx",
+        "description" : "A suite of tools for DJs. V2 supports finding shortest mix path between two songs and acapella match.",
+        "tech" : [ "Python", "Flask", "React"],
+        "link" : "https://myxdj.org/",
+        "github" : "https://github.com/shiva-menta/myx",
+        "youtube" : "https://youtu.be/Crg0erhZ54k"
+    },
     "Milestone Monitor" : {
         "name" : "milestone_monitor",
         "description" : "A GPT-powered SMS chatbot aimed at helping you follow through with your goals.",
@@ -7,17 +15,9 @@
         "link" : "",
         "youtube": ""
     },
-    "Myx" : {
-        "name" : "myx",
-        "description" : "A suite of tools for DJs. Current MVP matches acapellas with instrumentals for better mashups.",
-        "tech" : [ "Python", "Flask", "React"],
-        "link" : "https://myxdj.live/",
-        "github" : "https://github.com/shiva-menta/myx",
-        "youtube" : "https://youtu.be/Crg0erhZ54k"
-    },
     "Cypher Accelerator Website" : {
         "name" : "cypher",
-        "description" : "A website for Wharton’s premier blockchain and crypto startup accelerator.",
+        "description" : "A website for Wharton’s premier emerging technologies startup accelerator.",
         "tech" : [ "React", "Javascript", "Firebase"],
         "link" : "https://cypher.wharton.upenn.edu",
         "github" : "",
